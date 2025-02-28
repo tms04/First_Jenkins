@@ -2,13 +2,13 @@ pipeline {
     agent any
     stages {
         stage('Build') {
-        steps {
-            bat 'echo "Building project..."'
+            steps {
+                bat 'echo "Building project..."'
             }
         }
         stage('Test') {
             steps {
-                sh 'mvn test'
+                bat 'mvn test'
             }
             post {
                 always {
@@ -16,6 +16,5 @@ pipeline {
                 }
             }
         }
-
     }
 }
